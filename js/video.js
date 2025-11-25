@@ -9,7 +9,8 @@ window.addEventListener("load", function() {
     video.pause();
 
     video.loop = false;
-    document.querySelector("#volume").innerHTML  = (video.volume * 100) + "%";
+
+    document.querySelector("#volume").innerHTML = (video.volume * 100) + "%";
 });
 //DPMO RNNNNN
 //IM GONNA THROW PLATES
@@ -21,9 +22,9 @@ document.querySelector("#play").addEventListener("click", function() {
  });
 
 document.querySelector("#pause").addEventListener("click", function() {
- 	console.log("Pause Video");
-	video.pause();
- });
+    video.pause();
+    console.log("Pause Video");
+});
 
 document.querySelector("#slower").addEventListener("click", function() {
     video.playbackRate = video.playbackRate * 0.9;
@@ -48,12 +49,12 @@ document.querySelector("#skip").addEventListener("click", function() {
 });
 
 document.querySelector("#mute").addEventListener("click", function() {
-    video.muted = !video.muted;
-
-    if (video.muted) {
+    if (!video.muted) {
+        video.muted = true;
         this.innerHTML = "Unmute";
         console.log("Muted");
     } else {
+        video.muted = false;
         this.innerHTML = "Mute";
         console.log("Unmuted");
     }
