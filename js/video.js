@@ -1,12 +1,18 @@
 var video;
 
 window.addEventListener("load", function() {
-	console.log("Good job opening the window");
+    console.log("Good job opening the window");
 
-	video = document.getElementById("player1");
+    video = document.getElementById("player1");
+
+    video.autoplay = false;
+    video.pause();
+
     video.loop = false;
     document.querySelector("#volume").innerHTML  = (video.volume * 100) + "%";
 });
+//DPMO RNNNNN
+//IM GONNA THROW PLATES
 
 document.querySelector("#play").addEventListener("click", function() {
     video.play();
