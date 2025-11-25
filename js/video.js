@@ -6,9 +6,11 @@ window.addEventListener("load", function() {
     video = document.getElementById("player1");
 
     video.autoplay = false;
+    video.loop = false;
+
     video.pause();
 
-    video.loop = false;
+    video.load();
 
     document.querySelector("#volume").innerHTML = (video.volume * 100) + "%";
 });
