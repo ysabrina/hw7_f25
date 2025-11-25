@@ -9,10 +9,11 @@ window.addEventListener("load", function() {
 });
 
 document.querySelector("#play").addEventListener("click", function() {
- 	console.log("Play Video");
-	video.play();
+    video.play();
+    document.querySelector("#volume").textContent = (video.volume * 100) + "%";
+    console.log("Play Video");
  });
- 
+
 document.querySelector("#pause").addEventListener("click", function() {
  	console.log("Pause Video");
 	video.pause();
@@ -21,4 +22,9 @@ document.querySelector("#pause").addEventListener("click", function() {
 document.querySelector("#slower").addEventListener("click", function() {
     video.playbackRate *= 0.9;
     console.log("New speed is:", video.playbackRate.toFixed(5));
+});
+
+document.querySelector("#faster").addEventListener("click", function() {
+    video.playbackRate /= 0.9;
+    console.log("New speed:", video.playbackRate.toFixed(5));
 });
